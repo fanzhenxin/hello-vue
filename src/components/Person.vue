@@ -12,6 +12,9 @@
             {{ g.name }}
         </li>
     </ul>
+    <br/>
+    <button @click="changeGame">修改游戏列表</button>
+    <br/>
 </template>
 <script setup lang="ts" name="Person">
 import { ref } from 'vue'
@@ -20,12 +23,32 @@ let person = reactive({
     name: 'zhangsan',
     age: 18
 })
-let game = [{id:'1', name:'无畏契约'},{id:'2', name:'和平精英'},{id:'3', name:'英雄联盟'}];
+let game = ref([{id:'1', name:'无畏契约'},{id:'2', name:'和平精英'},{id:'3', name:'英雄联盟'}]);
 function changeName() {
     person.name = 'lisi'
 }
 function changeAge() {
     person.age = 20
+}
+function changePerson() {
+    //错误方法,不能使用reactive定义的响应式数据
+    person = {
+        name: 'wangwu',
+        age: 30
+    }
+    // 正确方法,使用Object.assign方法赋值,或者干脆就不用reactive定义响应式数据,直接使用ref定义响应式数据
+    Object.assign(person, {
+        name: 'wangwu',
+        age: 30
+    })
+}
+function changeGame() {
+    game.value = [
+        {id:'1', name:'无畏契约'},
+        {id:'2', name:'和平精英'},
+        {id:'3', name:'英雄联盟'},
+        {id:'4', name:'原神'}
+    ]
 }
 </script>
 <style scoped>

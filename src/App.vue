@@ -3,12 +3,13 @@
     <h1>Hello Vue 3!</h1>
   </div>
   <br>
-  <Person />
+  <Person2 />
 </template>
 <script setup lang="ts">
 import { ref } from 'vue'
 import { reactive } from 'vue';
 import Person from './components/Person.vue';
+import Person2 from './components/Person2.vue';
 </script>
 <style scoped>
   /* #app {
