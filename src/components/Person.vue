@@ -19,6 +19,8 @@
 <script setup lang="ts" name="Person">
 import { ref } from 'vue'
 import { reactive } from 'vue'; // 响应式数据
+import { toRefs } from 'vue';
+import { toRef } from 'vue';
 let person = reactive({
     name: 'zhangsan',
     age: 18

@@ -19,7 +19,7 @@
     </div>
 </template>
 <script setup lang="ts" name="Person2">
-import { ref,reactive,computed,toRefs } from 'vue'
+import { ref,reactive,computed,toRefs,defineExpose } from 'vue'
 let computerGames = reactive({
     'id': 1,
     'game': 'csgo',
@@ -53,6 +53,10 @@ function changeAge() {
 function changeGame() {
     computerGames.game = 'dota'
 }
+defineExpose({
+    fullName,
+    age
+})
 </script>
 <style scoped>
 

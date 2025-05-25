@@ -1,6 +1,6 @@
 1.setup
 2.ref,reactive
-3.toRef,toRefs
+3.toRef,toRefs,defineExpose
 4.computed,watch,watchEffect
     watch智能监视以下四种数据
     1.ref定义的数据
@@ -15,4 +15,6 @@
     2.reactive定义的数据
     3.函数返回一个值(getter函数)
     4.一个包含上述内容的数组
-5.provide,inject
+    watchEffect
+    自动监听
+5.ref,defineProps,provide,inject
