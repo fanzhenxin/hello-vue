@@ -8,8 +8,9 @@
     </div>
 </template>
 <script setup lang="ts" name="Person4">
-import { ref,defineProps,withDefaults } from 'vue'
+import { ref,defineProps,withDefaults,onBeforeMount,onMounted,onBeforeUpdate,onUpdated,onBeforeUnmount,onUnmounted} from 'vue'
 import { type Persons } from '@/types';
+import axios from 'axios';
 //只接受list
 // let x = defineProps(['a','list'])
 // console.log(x)
