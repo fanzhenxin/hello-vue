@@ -17,4 +17,28 @@
     4.一个包含上述内容的数组
     watchEffect
     自动监听
-5.ref,defineProps,provide,inject
+5.ref,defineProps,route,routerLink,routerView
+安装axios组件:npm install axios
+安装router组件:npm install vue-router
+路由组件通常放在pages或者views文件夹下,非路由组件通常放在components文件夹下
+路由模式为history模式时,会有一个问题,就是刷新页面时,会出现404错误,因为刷新页面时,会向服务器发送一个请求,服务器没有这个请求,所以会出现404错误
+解决方法:在服务器端配置一个重定向,将所有的请求都重定向到index.html页面,这样就可以解决404错误了
+location / { 
+    root html;
+    index index.html index.htm;
+    try_files $uri $uri/ /index.html;
+}
+编程式路由导航
+在vue中，我们可以使用编程式路由导航来实现路由跳转。编程式路由导航是通过调用Vue Router提供的API来实现的，例如使用router.push()方法来跳转到指定的路由。
+编程式路由导航的优点是可以在代码中控制路由跳转的逻辑，例如根据用户的操作来决定是否跳转到指定的路由。
+编程式路由导航的缺点是需要手动编写路由跳转的逻辑，可能会导致代码的复杂度增加，并且容易出现错误。
+编程时导航使用场景:1.符合某些条件才跳转.2.类似鼠标滑动时进行跳转
+
+集中式状态(数据管理)
+vue2->vuex
+vue3->pinia
+actions:{}
+mutations:{}
+getters:{}
+$subscribe
+storeToRefs：将store中的数据转换为ref对象，方便在模板中使用

@@ -5,8 +5,23 @@
   </div>
   <br>
   <!-- <Person2 /> -->
+   <!-- 导航区 -->
+   <div class="nav">
+    <RouterLink to="/" active-class="active">首页</RouterLink>
+    <RouterLink to="/person/person2?a=哈哈&b=嘿嘿" active-class="active">人员管理</RouterLink>
+    <RouterLink to="/person2" active-class="active">人员管理2</RouterLink>
+    <RouterLink :to="`/person3/person2?id=${personlist}`" active-class="active">人员管理3</RouterLink>
+    <RouterLink :to="{ path: '/person2', query: { a: '哈哈', b: '嘿嘿' } }" active-class="active">人员管理2</RouterLink>
+    <RouterLink :to="{ path: '/person3' }" active-class="active">人员管理3</RouterLink>
+    <RouterLink :to="{ name:'person4' }" active-class="active">人员管理4</RouterLink>
+    </div>
+   <!-- 展示区 -->
+   <div class="main-content">
+    <RouterView ></RouterView>
+  </div>
 </template>
 <script setup lang="ts" name="App">
+import { RouterLink, RouterView } from 'vue-router';
 import { ref } from 'vue'
 import { reactive } from 'vue';
 import Person from './components/Person.vue';
